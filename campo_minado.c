@@ -13,7 +13,6 @@ void inicializar_campo(Celula*** campo, int linhas, int colunas) {
         for (int j = 0; j < colunas; j++) {
             (*campo)[i][j].tem_mina = 0;
             (*campo)[i][j].aberto = 0;
-            // Outros campos podem ser inicializados aqui
         }
     }
 }
