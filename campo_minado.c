@@ -108,12 +108,6 @@ void revelar_vizinhas(Celula** campo, int linhas, int colunas, int linha, int co
     // Verificar se a célula é vazia (sem mina)
     if (campo[linha][coluna].tem_mina == 0) {
         contar_bombas_vizinhas(campo,linhas,colunas,linha,coluna);
-        // Chamar recursivamente a função para as células vizinhas
-        for (int i = linha - 1; i <= linha + 1; i++) {
-            for (int j = coluna - 1; j <= coluna + 1; j++) {
-                
-            }
-        }
     } 
 }
 

@@ -11,6 +11,8 @@ void atualizar_tela(Celula** campo, int linhas, int colunas, int linha_atual, in
 
 void exibir_menu() {
     clear();
+
+    attron(COLOR_PAIR(1));
     printw("   __  ____           _____                                  \n");
     printw("   /  |/  (_)___  ___ / ___/      _____  ___  ____  ___  _____\n");
     printw("  / /|_/ / / __ \\/ _ \\__ \\ | /| / / _ \\/ _ \\/ __ \\/ _ \\/ ___/\n");
@@ -18,22 +20,28 @@ void exibir_menu() {
     printw("/_/  /_/_/_/ /_/\\___/____/|__/|__/\\___/\\___/ .___/\\___/_/     \n");
     printw("                              coded in C  /_/    By Igor, Maju e Tiago.         \n");
     printw("\n");
-    printw("Bem-vindo ao Campo Minado!\n");
+    attroff(COLOR_PAIR(1));
+    printw("Bem-vindo(a) ao Campo Minado!\n");
     printw("1. Novo Jogo\n");
     printw("2. Instruções\n");
+    attron(COLOR_PAIR(1));
     printw("3. Sair\n");
+    attroff(COLOR_PAIR(1));
     refresh();
 }
 
 
 void mostrar_instrucoes() {
     clear();
+
     printw("Instruções do Campo Minado:\n");
+    attron(COLOR_PAIR(1));
     printw("- Use as teclas 'W', 'A', 'S', 'D' para mover o cursor.\n");
     printw("- Pressione a barra de espaço para abrir uma célula.\n");
     printw("- Se abrir uma mina, o jogo acaba.\n");
     printw("- O número em uma célula aberta indica quantas minas estão nas 8 células vizinhas.\n");
     printw("- O objetivo é abrir todas as células sem minas.\n");
+    attroff(COLOR_PAIR(1));
     printw("- Pressione 'q' para voltar ao menu.\n");
     refresh();
 
@@ -49,6 +57,8 @@ int main() {
     // Inicializar a biblioteca ncurses
     initscr();
     start_color();  // Inicialização de cores
+    init_pair(1, COLOR_RED, COLOR_BLACK);
+
 
     int escolha_menu = 0;
 
