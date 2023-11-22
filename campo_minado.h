@@ -14,7 +14,7 @@ void popular_com_minas(Celula** campo, int linhas, int colunas, int num_minas);
 void imprimir_campo(Celula** campo, int linhas, int colunas, int escala);
 void abrir_celula(Celula** campo, int linhas, int colunas, int linha, int coluna, int* jogo_em_execucao);
 void fim_do_jogo(Celula** campo, int linhas, int colunas);
-void revelar_vizinhas(Celula** campo, int linhas, int colunas, int linha, int coluna, int* jogo_em_execucao);
+void revelar_vizinhas(Celula** campo, int linhas, int colunas, int linha, int coluna);
 int contar_bombas_vizinhas(Celula** campo, int linhas, int colunas, int linha, int coluna);
 
 #endif

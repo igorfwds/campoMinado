@@ -87,12 +87,12 @@ void fim_do_jogo(Celula** campo, int linhas, int colunas) {
 
     // Limpar a tela
     clear();
-    // refresh();
+    refresh();
 
 }
 
 
-void revelar_vizinhas(Celula** campo, int linhas, int colunas, int linha, int coluna, int* jogo_em_execucao) {
+void revelar_vizinhas(Celula** campo, int linhas, int colunas, int linha, int coluna) {
     // Verificar limites
     if (linha < 0 || linha >= linhas || coluna < 0 || coluna >= colunas) {
         return;
@@ -161,6 +161,6 @@ void abrir_celula(Celula** campo, int linhas, int colunas, int linha, int coluna
         return;
     } else {
         // Se a célula não contém uma mina, verificar células vizinhas
-        revelar_vizinhas(campo, linhas, colunas, linha, coluna, jogo_em_execucao);
+        revelar_vizinhas(campo, linhas, colunas, linha, coluna);
     }
 }
