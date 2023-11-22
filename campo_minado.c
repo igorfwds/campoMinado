@@ -73,24 +73,32 @@ void fim_do_jogo(Celula** campo, int linhas, int colunas) {
                 mvprintw(i, j * 3, " * ");
                 attroff(COLOR_PAIR(1));
             } else if (campo[i][j].aberto && campo[i][j].tem_mina==0) {
-                // mvprintw(i, j * 3, "");
                 pontuacao++;  // Incrementar a pontuação para células sem minas
             }
         }
     }
 
-    if(pontuacao==90){
+    if(pontuacao>=90){
         attron(COLOR_PAIR(1));  // Cor vermelha para mina
-        mvprintw(linhas + 2, 0, "UHUUUUUUL!  VOCÊ VENCEU !!!!");
+        mvprintw(linhas + 2, 0, "UHUUUUUUL!  VOCE VENCEU !!!!");
         attroff(COLOR_PAIR(1));
-    }
-    // Exibir a pontuação abaixo do campo
+        // Exibir a pontuação abaixo do campo
+        mvprintw(linhas + 4, 0, "Pontuação: %d", pontuacao);
+        refresh();
+        sleep(2);  // Esperar 3 segundos antes de voltar para o menu
+
+        // Limpar a tela
+        clear();
+    }else{
+        // Exibir a pontuação abaixo do campo
     mvprintw(linhas + 2, 0, "Pontuação: %d", pontuacao);
     refresh();
     sleep(2);  // Esperar 3 segundos antes de voltar para o menu
 
     // Limpar a tela
     clear();
+    }
+    
 
 }
 
