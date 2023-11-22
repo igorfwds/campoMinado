@@ -77,26 +77,78 @@ void fim_do_jogo(Celula** campo, int linhas, int colunas) {
             }
         }
     }
-
     if(pontuacao>=90){
-        attron(COLOR_PAIR(1));  // Cor vermelha para mina
-        mvprintw(linhas + 2, 0, "UHUUUUUUL!  VOCE VENCEU !!!!");
-        attroff(COLOR_PAIR(1));
+        refresh();
+        printw("\n");
+        printw("\n");
+        printw("\n");
+        printw("VVVVVVVV           VVVVVVVVIIIIIIIIIITTTTTTTTTTTTTTTTTTTTTTT     OOOOOOOOO     RRRRRRRRRRRRRRRRR   IIIIIIIIII               AAA                     !!!  !!!  !!! \n");
+        refresh();
+        sleep(1);
+        printw("V::::::V           V::::::VI::::::::IT:::::::::::::::::::::T   OO:::::::::OO   R::::::::::::::::R  I::::::::I              A:::A                   !!:!!!!:!!!!:!!\n");
+        refresh();
+        sleep(1);
+        printw("V::::::V           V::::::VI::::::::IT:::::::::::::::::::::T OO:::::::::::::OO R::::::RRRRRR:::::R I::::::::I             A:::::A                  !:::!!:::!!:::!\n");
+        refresh();
+        sleep(1);
+        printw("V::::::V           V::::::VII::::::IIT:::::TT:::::::TT:::::TO:::::::OOO:::::::ORR:::::R     R:::::RII::::::II            A:::::::A                 !:::!!:::!!:::!\n");
+        refresh();
+        sleep(1);
+        printw(" V:::::V           V:::::V   I::::I  TTTTTT  T:::::T  TTTTTTO::::::O   O::::::O  R::::R     R:::::R  I::::I             A:::::::::A                !:::!!:::!!:::!\n");
+        refresh();
+        sleep(1);
+        printw("  V:::::V         V:::::V    I::::I          T:::::T        O:::::O     O:::::O  R::::R     R:::::R  I::::I            A:::::A:::::A               !:::!!:::!!:::!\n");
+        refresh();
+        sleep(1);
+        printw("   V:::::V       V:::::V     I::::I          T:::::T        O:::::O     O:::::O  R::::RRRRRR:::::R   I::::I           A:::::A A:::::A              !:::!!:::!!:::!\n");
+        refresh();
+        sleep(1);
+        printw("    V:::::V     V:::::V      I::::I          T:::::T        O:::::O     O:::::O  R:::::::::::::RR    I::::I          A:::::A   A:::::A             !:::!!:::!!:::!\n");
+        refresh();
+        sleep(1);
+        printw("     V:::::V   V:::::V       I::::I          T:::::T        O:::::O     O:::::O  R::::RRRRRR:::::R   I::::I         A:::::A     A:::::A            !:::!!:::!!:::!\n");
+        refresh();
+        sleep(1);
+        printw("      V:::::V V:::::V        I::::I          T:::::T        O:::::O     O:::::O  R::::R     R:::::R  I::::I        A:::::AAAAAAAAA:::::A           !:::!!:::!!:::!\n");
+        refresh();
+        sleep(1);
+        printw("       V:::::V:::::V         I::::I          T:::::T        O:::::O     O:::::O  R::::R     R:::::R  I::::I       A:::::::::::::::::::::A          !!:!!!!:!!!!:!!\n");
+        refresh();
+        sleep(1);
+        printw("        V:::::::::V          I::::I          T:::::T        O::::::O   O::::::O  R::::R     R:::::R  I::::I      A:::::AAAAAAAAAAAAA:::::A          !!!  !!!  !!! \n");
+        refresh();
+        sleep(1);
+        printw("         V:::::::V         II::::::II      TT:::::::TT      O:::::::OOO:::::::ORR:::::R     R:::::RII::::::II   A:::::A             A:::::A                       \n");
+        refresh();
+        sleep(1);
+        printw("          V:::::V          I::::::::I      T:::::::::T       OO:::::::::::::OO R::::::R     R:::::RI::::::::I  A:::::A               A:::::A        !!!  !!!  !!! \n");
+        refresh();
+        sleep(1);
+        printw("           V:::V           I::::::::I      T:::::::::T         OO:::::::::OO   R::::::R     R:::::RI::::::::I A:::::A                 A:::::A      !!:!!!!:!!!!:!!\n");
+        refresh();
+        sleep(1);
+        printw("            VVV            IIIIIIIIII      TTTTTTTTTTT           OOOOOOOOO     RRRRRRRR     RRRRRRRIIIIIIIIIIAAAAAAA                   AAAAAAA      !!!  !!!  !!! \n");
+        refresh();
+        sleep(1);
+        printw("\n");
+        
+
+        mvprintw(linhas + 19, 5, "UHUUUUUUL!  VOCE VENCEU !!!!");
         // Exibir a pontuação abaixo do campo
-        mvprintw(linhas + 4, 0, "Pontuação: %d", pontuacao);
+        mvprintw(linhas + 21, 0, "Sua Pontuação foi de : %d pontos !!!", pontuacao);
+        refresh();
+        sleep(5);  // Esperar 6 segundos antes de voltar para o menu
+
+        // Limpar a tela
+        clear();
+    }else{
+            // Exibir a pontuação abaixo do campo
+        mvprintw(linhas + 2, 0, "Pontuação: %d", pontuacao);
         refresh();
         sleep(2);  // Esperar 3 segundos antes de voltar para o menu
 
         // Limpar a tela
         clear();
-    }else{
-        // Exibir a pontuação abaixo do campo
-    mvprintw(linhas + 2, 0, "Pontuação: %d", pontuacao);
-    refresh();
-    sleep(2);  // Esperar 3 segundos antes de voltar para o menu
-
-    // Limpar a tela
-    clear();
     }
     
 
