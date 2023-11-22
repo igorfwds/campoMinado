@@ -73,8 +73,8 @@ void fim_do_jogo(Celula** campo, int linhas, int colunas) {
                 attron(COLOR_PAIR(1));  // Cor vermelha para mina
                 mvprintw(i, j * 3, "*");
                 attroff(COLOR_PAIR(1));
-            } else if (!campo[i][j].aberto) {
-                mvprintw(i, j * 3, "-");
+            } else if (campo[i][j].aberto && campo[i][j].tem_mina==0) {
+                // mvprintw(i, j * 3, "");
                 pontuacao++;  // Incrementar a pontuação para células sem minas
             }
         }
