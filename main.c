@@ -5,7 +5,7 @@
 void atualizar_tela(Celula** campo, int linhas, int colunas, int linha_atual, int coluna_atual, int escala) {
     clear();
     imprimir_campo(campo, linhas, colunas, escala);
-    mvprintw(linha_atual * escala, coluna_atual * escala * 3, "X");
+    mvprintw(linha_atual * escala, coluna_atual * escala * 3, " ");
     refresh();
 }
 

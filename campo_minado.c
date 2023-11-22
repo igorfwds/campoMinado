@@ -71,7 +71,7 @@ void fim_do_jogo(Celula** campo, int linhas, int colunas) {
         for (int j = 0; j < colunas; j++) {
             if (campo[i][j].tem_mina) {
                 attron(COLOR_PAIR(1));  // Cor vermelha para mina
-                mvprintw(i, j * 3, "*");
+                mvprintw(i, j * 3, " * ");
                 attroff(COLOR_PAIR(1));
             } else if (campo[i][j].aberto && campo[i][j].tem_mina==0) {
                 // mvprintw(i, j * 3, "");
@@ -87,7 +87,6 @@ void fim_do_jogo(Celula** campo, int linhas, int colunas) {
 
     // Limpar a tela
     clear();
-    refresh();
 
 }
 
