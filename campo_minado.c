@@ -79,6 +79,11 @@ void fim_do_jogo(Celula** campo, int linhas, int colunas) {
         }
     }
 
+    if(pontuacao==90){
+        attron(COLOR_PAIR(1));  // Cor vermelha para mina
+        mvprintw(linhas + 2, 0, "UHUUUUUUL!  VOCÊ VENCEU !!!!");
+        attroff(COLOR_PAIR(1));
+    }
     // Exibir a pontuação abaixo do campo
     mvprintw(linhas + 2, 0, "Pontuação: %d", pontuacao);
     refresh();
