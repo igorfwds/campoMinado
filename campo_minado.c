@@ -146,7 +146,7 @@ void fim_do_jogo(Celula** campo, int linhas, int colunas) {
             // Exibir a pontuação abaixo do campo
         mvprintw(linhas + 2, 0, "Pontuação: %d", pontuacao);
         refresh();
-        sleep(5);  // Esperar 6 segundos antes de voltar para o menu
+        sleep(3);  // Esperar 4 segundos antes de voltar para o menu
 
         // Limpar a tela
         clear();
