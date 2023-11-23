@@ -77,6 +77,7 @@ void fim_do_jogo(Celula** campo, int linhas, int colunas) {
             }
         }
     }
+    //pontuacao=90;    //comentario para testar a vitoria na apresentação
     if(pontuacao>=90){
         refresh();
         printw("\n");
@@ -154,6 +155,31 @@ void fim_do_jogo(Celula** campo, int linhas, int colunas) {
 
 }
 
+void abrir_celula(Celula** campo, int linhas, int colunas, int linha, int coluna, int* jogo_em_execucao) {
+    // Verificar limites
+    if (linha < 0 || linha >= linhas || coluna < 0 || coluna >= colunas) {
+        return;
+    }
+
+    // Verificar se a célula já foi aberta
+    if (campo[linha][coluna].aberto) {
+        return;
+    }
+
+    // Abrir a célula
+    campo[linha][coluna].aberto = 1;
+
+    // Verificar se há uma mina na célula
+    if (campo[linha][coluna].tem_mina) {
+        
+        fim_do_jogo(campo,linhas,colunas);
+        *jogo_em_execucao = 0;
+        return;
+    } else {
+        // Se a célula não contém uma mina, verificar células vizinhas
+        revelar_vizinhas(campo, linhas, colunas, linha, coluna);
+    }
+}
 
 void revelar_vizinhas(Celula** campo, int linhas, int colunas, int linha, int coluna) {
     // Verificar limites
@@ -196,28 +222,4 @@ int contar_bombas_vizinhas(Celula** campo, int linhas, int colunas, int linha, i
     return contador;
 }
 
-void abrir_celula(Celula** campo, int linhas, int colunas, int linha, int coluna, int* jogo_em_execucao) {
-    // Verificar limites
-    if (linha < 0 || linha >= linhas || coluna < 0 || coluna >= colunas) {
-        return;
-    }
 
-    // Verificar se a célula já foi aberta
-    if (campo[linha][coluna].aberto) {
-        return;
-    }
-
-    // Abrir a célula
-    campo[linha][coluna].aberto = 1;
-
-    // Verificar se há uma mina na célula
-    if (campo[linha][coluna].tem_mina) {
-        // Chamar a função de fim do jogo
-        fim_do_jogo(campo,linhas,colunas);
-        *jogo_em_execucao = 0;
-        return;
-    } else {
-        // Se a célula não contém uma mina, verificar células vizinhas
-        revelar_vizinhas(campo, linhas, colunas, linha, coluna);
-    }
-}

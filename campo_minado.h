@@ -3,9 +3,8 @@
 
 // Definindo a estrutura para uma célula do campo minado
 typedef struct {
-    int tem_mina;
-    int aberto;
-    // Outros campos que você precisar
+    int tem_mina; 
+    int aberto;   
 } Celula;
 
 // Funções

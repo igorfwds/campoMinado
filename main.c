@@ -25,7 +25,7 @@ int main() {
 
         switch (escolha_menu) {
             case '1':
-                // Lógica para iniciar um novo jogo
+                
                 clear();
                 refresh();
                 
@@ -43,7 +43,7 @@ int main() {
                 int coluna_atual = 0;
 
                 do {
-                    // Atualizar a tela
+                    
                     atualizar_tela(campo, linhas, colunas, linha_atual, coluna_atual, 1);
 
                     // Capturar a tecla
@@ -82,7 +82,7 @@ int main() {
                 break;
 
             case '2':
-                // Lógica para exibir instruções
+                
                 mostrar_instrucoes();
                 break;
 
